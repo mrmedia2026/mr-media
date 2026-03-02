@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Mr.Media</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* Magnetic Link Style */
+    .link-wrap a {
+        position: relative;
+        text-decoration: none;
+        color: #fff;
+        font-family: 'Syncopate', sans-serif;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        padding: 15px 30px;
+        transition: 0.4s;
+        z-index: 1;
+    }
+
+    .link-wrap a::before {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; width: 100%; height: 0%;
+        background: white;
+        z-index: -1;
+        transition: 0.3s;
+        mix-blend-mode: difference;
+    }
+
+    .link-wrap a:hover::before {
+        height: 100%;
+    }
+
+    .link-wrap a:hover {
+        color: #000;
+    }
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)),
+    url('c.jpg') center / cover no-repeat fixed;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background: #00e5ff;
+  transition: .3s;
+}
+nav a:hover::after { width: 100%; }
+
+/* Section styling */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 90px 30px;
+  text-align: center;
+}
+h1, h2 {
+  color: #00e5ff;
+}
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+}
+p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  background: rgba(255,255,255,.05);
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+  margin-bottom: 40px;
+}
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #111;
+  color: #fff;
+}
+button {
+  padding: 14px 40px;
+  background: linear-gradient(135deg,#00e5ff,#00ffc8);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .3s;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,229,255,.5);
+}
+
+/* Contact Info Cards */
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+.contact-card {
+  background: rgba(255,255,255,.05);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 15px;
+  flex: 1 1 250px;
+  border: 1px solid rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+}
+.contact-card h3 {
+  color: #00ffc8;
+  margin-bottom: 10px;
+}
+.contact-card p {
+  color: #ddd;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Social Links */
+.social-links a {
+  margin: 0 10px;
+  color: #00e5ff;
+  font-size: 24px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.social-links a:hover {
+  color: #00ffc8;
+  transform: scale(1.2);
+}
+
+/* Map */
+.map-container {
+  margin: 40px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+/* FAQ Section */
+.faq {
+  margin-top: 50px;
+  text-align: left;
+}
+.faq h3 {
+  color: #00e5ff;
+  margin-bottom: 10px;
+}
+.faq p {
+  color: #ddd;
+  margin-bottom: 20px;
+}
+/* =========================
+   Professional Enhancements
+========================= */
+
+/* Smooth global animation */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Header premium shadow */
+header {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Section entrance animation */
+section {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form premium glow */
+form {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Input focus glow */
+input:focus, textarea:focus {
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 0 2px rgba(0,229,255,0.3);
+  background: #0b0b0b;
+}
+
+/* Button shine animation */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.4), transparent);
+  transition: .6s;
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+/* Contact card hover effect */
+.contact-card {
+  transition: .4s;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,229,255,.15);
+  border-color: rgba(0,229,255,.4);
+}
+
+/* FAQ modern look */
+.faq p {
+  background: rgba(255,255,255,.04);
+  padding: 15px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid #00e5ff;
+}
+
+/* Social neon hover */
+.social-links a,
+.link-wrap a {
+  text-shadow: 0 0 8px rgba(0,229,255,.5);
+}
+
+}
+
+/* Map premium border */
+.map-container {
+  box-shadow: 0 25px 60px rgba(0,0,0,.6);
+}
+
+/* Section heading underline */
+h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  left: 20%;
+  bottom: 0;
+  background: linear-gradient(90deg,#00e5ff,#00ffc8);
+  border-radius: 10px;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+  header {
+    padding: 14px 20px;
+  }
+  h1 { font-size: 36px; }
+  h2 { font-size: 30px; }
+}
+
+</style>
+</head>
+
+<body>
+<header>
+ <img src="1.jpeg"
+     style="height:80px; width:80px; border-radius:50%; object-fit:cover; vertical-align:middle;" />
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+<h2>Contact Us</h2>
+<p>We would love to hear from you! Reach out to us via the form below, or use the contact information provided.</p>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<div class="contact-info">
+  <div class="contact-card">
+    <h3>Phone</h3>
+    <p>+91 85250 10175</p>
+  </div>
+  <div class="contact-card">
+    <h3>Email</h3>
+    <p>mrmedia2026@gmail.com</p>
+  </div>
+  <div class="contact-card">
+    <h3>Address</h3>
+    <p>Thirugokarnam, Pudukkottai , India</p>
+  </div>
+</div>
+
+ 
+
+<div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31257.73135640849!2d79.0406!3d10.3813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaa2f9b8c3c8f7%3A0x8c6b2c9f7d4b6a2a!2sPudukkottai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+ <div class="link-wrap" style="display: flex; justify-content: center; gap: 20px; margin-top: 60px; flex-wrap: wrap;">
+    <a href="https://www.instagram.com/pudugai_mr_media/" target="_blank">INSTAGRAM</a>
+    <a href="https://www.youtube.com/@MrMedia-007" target="_blank">YOUTUBE</a>
+    <a href="https://www.facebook.com/profile.php?id=61587344854815" target="_blank">FACEBOOK</a>
+    <a href="https://twitter.com/YOUR_USERNAME" target="_blank">TWITTER</a>
+</div>
+
+    </div>
+</section>
+</body>
+</html>
